@@ -153,45 +153,45 @@ const Upload = () => {
         <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen">
             <Navbar />
 
-            <section className="main-section">
-                <div className="page-heading py-16 max-w-4xl mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <section className="main-section px-2 sm:px-4">
+                <div className="page-heading py-8 sm:py-12 md:py-16 max-w-4xl mx-auto">
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                             Smart feedback for your dream job
                         </h1>
                         {isProcessing ? (
-                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-                                <div className="flex flex-col items-center space-y-6">
-                                    <div className="w-16 h-16 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
-                                    <h2 className="text-xl font-semibold text-gray-800">{statusText}</h2>
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-white/20 max-w-[450px] sm:max-w-md mx-auto">
+                                <div className="flex flex-col items-center space-y-4 sm:space-y-6">
+                                    <div className="w-12 sm:w-16 h-12 sm:h-16 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-gray-800 text-center">{statusText}</h2>
                                     <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                                         <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full animate-pulse"></div>
                                     </div>
-                                    <p className="text-gray-600 text-center max-w-md">
+                                    <p className="text-gray-600 text-center text-sm sm:text-base max-w-md leading-relaxed">
                                         Our AI is carefully analyzing your resume against the job requirements. This may take a few moments.
                                     </p>
                                 </div>
                             </div>
                         ) : (
                             <>
-                                <h2 className="text-xl text-gray-600 mb-8">
+                                <h2 className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
                                     Drop your resume for an ATS score and improvement tips
                                 </h2>
                                 
                                 {/* Error Display */}
                                 {error && (
-                                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 flex items-start space-x-3">
-                                        <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="bg-red-50 border border-red-200 rounded-xl p-3 sm:p-4 mb-6 sm:mb-8 flex items-start space-x-3 max-w-[450px] sm:max-w-2xl mx-auto">
+                                        <div className="w-5 sm:w-6 h-5 sm:h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <svg className="w-3 sm:w-4 h-3 sm:h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                             </svg>
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-red-800 font-medium">Error</h3>
-                                            <p className="text-red-700 text-sm mt-1">{error}</p>
+                                            <h3 className="text-red-800 font-medium text-sm sm:text-base">Error</h3>
+                                            <p className="text-red-700 text-xs sm:text-sm mt-1">{error}</p>
                                             <button 
                                                 onClick={() => setError(null)}
-                                                className="text-red-600 hover:text-red-800 text-sm underline mt-2"
+                                                className="text-red-600 hover:text-red-800 text-xs sm:text-sm underline mt-2"
                                             >
                                                 Dismiss
                                             </button>
@@ -200,9 +200,9 @@ const Upload = () => {
                                 )}
 
                                 {/* Main Form */}
-                                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-                                    <form id="upload-form" onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="flex flex-wrap gap-6">
+                                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-white/20 w-full max-w-[450px] sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto">
+                                    <form id="upload-form" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                                        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                             <div className="form-div">
                                                 <label htmlFor="company-name" className="block text-sm font-semibold text-gray-700 mb-2">
                                                     Company Name *
@@ -212,7 +212,7 @@ const Upload = () => {
                                                     name="company-name" 
                                                     placeholder="e.g., Google, Microsoft" 
                                                     id="company-name"
-                                                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                                    className="w-full px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                                     required
                                                 />
                                             </div>
@@ -225,7 +225,7 @@ const Upload = () => {
                                                     name="job-title" 
                                                     placeholder="e.g., Software Engineer, Product Manager" 
                                                     id="job-title"
-                                                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                                    className="w-full px-4 sm:px-5 py-4 sm:py-5 text-base sm:text-lg border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                                     required
                                                 />
                                             </div>
@@ -236,11 +236,11 @@ const Upload = () => {
                                                 Job Description *
                                             </label>
                                             <textarea 
-                                                rows={5} 
+                                                rows={6} 
                                                 name="job-description" 
                                                 placeholder="Paste the full job description here including requirements, qualifications, and responsibilities..." 
                                                 id="job-description"
-                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
+                                                className="w-full px-4 sm:px-5 py-4 sm:py-5 text-base sm:text-lg border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
                                                 required
                                             />
                                         </div>
@@ -251,17 +251,17 @@ const Upload = () => {
                                             </label>
                                             <FileUploader onFileSelect={handleFileSelect} />
                                             {file && (
-                                                <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2">
-                                                    <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <div className="mt-3 p-2 sm:p-3 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2">
+                                                    <svg className="w-4 sm:w-5 h-4 sm:h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                     </svg>
-                                                    <span className="text-green-800 text-sm font-medium">{file.name}</span>
+                                                    <span className="text-green-800 text-xs sm:text-sm font-medium truncate flex-1">{file.name}</span>
                                                     <button 
                                                         type="button"
                                                         onClick={() => setFile(null)}
-                                                        className="text-green-600 hover:text-green-800 ml-auto"
+                                                        className="text-green-600 hover:text-green-800 ml-auto flex-shrink-0"
                                                     >
-                                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="w-3 sm:w-4 h-3 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                                         </svg>
                                                     </button>
@@ -270,11 +270,11 @@ const Upload = () => {
                                         </div>
 
                                         <button 
-                                            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" 
+                                            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base" 
                                             type="submit"
                                             disabled={!file || isProcessing}
                                         >
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                             </svg>
                                             <span>Analyze Resume</span>
@@ -285,7 +285,7 @@ const Upload = () => {
                                                 <button 
                                                     type="button"
                                                     onClick={resetForm}
-                                                    className="text-blue-600 hover:text-blue-800 text-sm underline"
+                                                    className="text-blue-600 hover:text-blue-800 text-xs sm:text-sm underline"
                                                 >
                                                     Reset form and try again
                                                 </button>

@@ -75,21 +75,21 @@ form {
     @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
   }
   .main-section {
-    @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
+    @apply flex flex-col items-center gap-6 sm:gap-8 pt-6 sm:pt-8 md:pt-12 mx-2 sm:mx-4 md:mx-15 pb-5;
   }
   .page-heading {
-    @apply flex flex-col items-center gap-8 max-w-4xl text-center;
+    @apply flex flex-col items-center gap-6 sm:gap-8 max-w-4xl text-center px-2 sm:px-4;
   }
   .resumes-section {
-    @apply flex flex-wrap max-lg:flex-col gap-6 items-start  w-full max-w-[1850px] justify-evenly;
+    @apply flex flex-wrap max-lg:flex-col gap-4 sm:gap-6 items-start w-full max-w-[1850px] justify-evenly px-2 sm:px-4;
   }
 
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
+    @apply flex flex-col gap-6 sm:gap-8 min-h-[480px] sm:h-[560px] w-full max-w-[450px] sm:max-w-none sm:w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-3 sm:p-4;
   }
 
   .resume-card-header {
-    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+    @apply flex flex-col sm:flex-row gap-2 justify-between min-h-[90px] sm:min-h-[110px] items-center;
   }
 
   .feedback-section {
